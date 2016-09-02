@@ -1,7 +1,9 @@
-import requests
-
-base_url = "https://tickets.paytm.com/v2/"
+from datetime import datetime
 
 
-def api_call(url, method='GET', data={}, headers = {'Content-type': 'application/json'}):
-    return requests.request(method, url, headers, data)
+def friendly_date(dt):
+    """
+    Convert Y-m-d date into d b, Y
+    e.g. 2016-09-02 --> 02 Sep, 2016
+    """
+    return datetime.strptime(dt, "%Y-%m-%d").strftime("%d %b, %Y")
