@@ -9,5 +9,17 @@ class Common(models.Model):
         abstract = True
 
 
-class NotificationType(Common):
+class Event(Common):
+    data = models.TextField()
+
+
+class Type(Common):
     type = models.CharField(max_length=30)
+
+
+class Alert(Common):
+    alert_type = models.ForeignKey(Type, on_delete=models.CASCADE)
+    alert_event = models.ForeignKey(Event, on_delete=models.CASCADE)
+    title = models.CharField(max_length=30)
+    message = models.CharField(max_length=255)
+
