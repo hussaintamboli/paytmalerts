@@ -1,6 +1,6 @@
 from paytmalerts.lib.api import api_call
 from paytmalerts.lib.common import friendly_date
-from paytmalerts.notifier import notify
+from paytmalerts.lib.notifier import notify
 
 
 def alert_payload(bus):

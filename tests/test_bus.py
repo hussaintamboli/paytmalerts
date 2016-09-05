@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from paytmalerts.monitor import bus
+from paytmalerts.alerts import bus
 
 
 class TestBus(TestCase):
