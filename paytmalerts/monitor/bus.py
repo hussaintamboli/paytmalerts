@@ -6,8 +6,8 @@ from paytmalerts.notifier import notify
 def alert_payload(bus):
     return {
         'module': 'notifysend',
-        'title': '{} {}'.format(bus['travelsName'], friendly_date(bus['departureDate'])),
-        'message': '{} - {} seats'.format(bus['busType'], bus['avalableSeats'])
+        'title': '{}-{}: {} {} seats'.format(bus['source'], bus['destination'], friendly_date(bus['departureDate']), bus['avalableSeats']),
+        'message': '{} {}'.format(bus['busType'], bus['travelsName'])
     }
 
 

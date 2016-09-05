@@ -1,3 +1,6 @@
+import subprocess
+
 
 def notify(payload):
-    print payload
+    subprocess.Popen(['notify-send', payload['title'], payload['message']])
+    return
